@@ -1,7 +1,12 @@
-body {
-  font-family: sans-serif;
+@import "./scss/global/_normalize.scss";
+
+@import "./fonts/stylesheet.scss";
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-family: 'Gotham Pro';
 }
-h1 {
-	color:tomato;
-}
+
 
