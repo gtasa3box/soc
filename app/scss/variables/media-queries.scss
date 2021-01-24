@@ -1,0 +1,56 @@
+$palm-max: 320px;
+$hands-max: 530px;
+$handsWide-max: 850px;
+$lap-max: 1024px;
+$desk-max: 1600px;
+$deskLarge-max: 1920px;
+
+$palm-min: $palm-max + 1px;
+$hands-min: $hands-max + 1px;
+$handsWide-min: $handsWide-max + 1px;
+$lap-min: $lap-max + 1px;
+$desk-min: $desk-max + 1px;
+
+@mixin mq-min($minWidth) {
+  @media screen and (min-width: $minWidth) {
+    @content;
+  }
+}
+
+@mixin mq-max($maxWidth) {
+  @media screen and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin mq-minmax($minWidth, $maxWidth) {
+  @media screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}
+
+@mixin mq-hover {
+  @media not all and (hover: none) and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media all and (hover: none) and (pointer: coarse) {
+    &:active {
+      -webkit-tap-highlight-color: transparent;
+      @content;
+    }
+  }
+}
+
+@mixin mq-animation() {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}

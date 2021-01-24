@@ -1,0 +1,3 @@
+@mixin rel-width($width-block, $width-container) {
+  width: percentage($width-block / $width-container);
+}

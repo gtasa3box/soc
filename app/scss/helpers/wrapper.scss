@@ -1,0 +1,13 @@
+@mixin wrapper-margin($max-width) {
+  max-width: $max-width;
+  margin: 0 auto;
+  @content;
+}
+
+@mixin wrapper-padding($max-width, $top: 0, $bottom: 0) {
+  $half-width: $max-width / 2;
+  padding-top: $top;
+  padding-bottom: $bottom;
+  padding-left: calc(50% - #{$half-width});
+  padding-right: calc(50% - #{$half-width});
+}

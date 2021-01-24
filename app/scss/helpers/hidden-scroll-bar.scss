@@ -1,0 +1,18 @@
+@mixin hidden-scroll-bar() {
+  scrollbar-face-color: transparent;
+  scrollbar-track-color: transparent;
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 0;
+    width: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    height: 0;
+    width: 0;
+  }
+}
